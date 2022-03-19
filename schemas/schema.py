@@ -9,6 +9,15 @@ class GovernorateBase(BaseModel):
     long: float
     image :str
 
+class GovernorateDisplay(BaseModel):
+    name :str
+    description:str
+    lat: float
+    long: float
+    image :str
+    class Config():
+        orm_mode = True
+
 class EntityBase(BaseModel):
     name :str
     lat: float
