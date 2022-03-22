@@ -13,7 +13,7 @@ router = APIRouter(
 )
 
 @router.post('')
-def create(request:GovernorateBase,db:Session=Depends(get_db)):
+def create_governorate(request:GovernorateBase,db:Session=Depends(get_db)):
     return db_gov.create(db,request)
 
 @router.get('/{id}')
@@ -21,7 +21,7 @@ def get_governorate(db:Session=Depends(get_db),id=id):
     response = Response()
     return db_gov.get_governorate(db,id)
 
-@router.get('/all',response_model=List[GovernorateDisplay],description="Get All Governorate")
+@router.get('/')
 def get_all_governorates(db:Session=Depends(get_db)):
     return db_gov.get_all(db)
 
@@ -33,5 +33,5 @@ def update_gov(request:GovernorateBase,db:Session=Depends(get_db),id=id):
 
 
 @router.delete('/delete/{id}')
-def delete(id:int,db:Session= Depends(get_db)):
+def delete_gov(id:int,db:Session= Depends(get_db)):
     return db_gov.delete(db,id)

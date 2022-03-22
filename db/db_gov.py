@@ -11,9 +11,7 @@ def create(db:Session, request: GovernorateBase):
          long = request.long,
          description = request.description,
          image = request.image
-
     )
-
     db.add(new_gov)
     db.commit()
     db.refresh(new_gov)
