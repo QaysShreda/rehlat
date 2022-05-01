@@ -44,3 +44,6 @@ class EntityBase(BaseModel):
     sport :bool
     track :bool
     governorate_id :int
+    class Config():
+        orm_mode = True
+

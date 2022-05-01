@@ -8,7 +8,7 @@ from schemas.schema import GovernorateBase,GovernorateDisplay
 from sqlalchemy.orm import  Session
 
 router = APIRouter(
-    prefix='/governorate',
+    prefix='/gov',
     tags=['Governorates']
 )
 
